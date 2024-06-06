@@ -2,25 +2,23 @@
 #include <ctime>
 using namespace std;
 
-void star_painter(int number) {
-	if (number == 0)
+int sum_find(int a, int b, int sum = 0) {
+	if (a == b)
 	{
-		cout << '0';
+		return sum + b;
 	}
-	else if (number == 1)
-	{
-		cout << " * ";
-	}
-	else
-	{
-		cout << " * ";
-		star_painter(number - 1);
+	else {
+		sum += a;
+		a++;
+		sum_find(a, b, sum);
 	}
 }
 
 int main() {
-	int stars;
-	cout << "Enter number of stars: ";
-	cin >> stars;
-	star_painter(stars);
+	int a, b;
+	cout << "Enter a: ";
+	cin >> a;
+	cout << "Enter b: ";
+	cin >> b;
+	cout << sum_find(a, b);
 }

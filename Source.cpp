@@ -2,23 +2,25 @@
 #include <ctime>
 using namespace std;
 
-int result(int num, int power)
-{
-	if (power == 0)
+void star_painter(int number) {
+	if (number == 0)
 	{
-		return 0;
+		cout << '0';
 	}
-	else if (power == 1)
+	else if (number == 1)
 	{
-		return num;
+		cout << " * ";
 	}
-	else {
-		result(num * num, power - 1);
+	else
+	{
+		cout << " * ";
+		star_painter(number - 1);
 	}
-	
 }
 
-
 int main() {
-	cout << result(5, 2) << endl;
+	int stars;
+	cout << "Enter number of stars: ";
+	cin >> stars;
+	star_painter(stars);
 }
